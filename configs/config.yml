@@ -1,0 +1,493 @@
+# ________________________________________________
+#
+#       CHAMPION TICKETS CONFIGURATION FILE
+#
+# Here you can customize Bot's settings.
+#
+# ________________________________________________
+
+version: "1.5.2"
+
+# ____________________________
+#
+# GENERAL OPTIONS
+# ____________________________
+
+general:
+  # Name of the Bot
+  name: "Champion Tickets"
+  # Bot's Prefix
+  prefix: "-"
+  # Bot Token obtained from Discord Developer Portal
+  token: "MTA1NTQ5MzExNDM5NzIwMDQ1NQ.GvJa6x.zOX5ctp9UMhCA9q0K-5qTFH1dpYLf_yuNKpItk"
+  # Mention Support Role in new Tickets
+  mention_support: false
+  # Mention Ticket Author in new Tickets
+  mention_author: false
+  # Save Transcripts
+  transcripts: true
+  # Transcript Type, TXT or HTML
+  transcript_type: "HTML"
+  # DM Transcripts to User & Support who claimed ticket
+  dm_transcript: true
+  # Confirm Close of Ticket
+  confirm_close: true
+  # ID of User who is gonna have access to EVAL Command
+  # Example:
+  #
+  # eval:
+  #   - "1234"
+  #
+  # If you don't want any, just change to eval: []
+  eval: []
+  # Currency for PayPal/Crypto, EUR/USD etc.
+  currency: "USD"
+  # Currency Symbol
+  currency_symbol: "$"
+  # Type of Channel for Tickets Statistics
+  # Can be: GUILD_TEXT, GUILD_VOICE
+  stats_type: "GUILD_VOICE"
+  # ID of Guild in which Bot will be used
+  # Used for Custom Status Stats, Slash Commands and similar
+  guild: "317324195811819527"
+  # Review Character Limit
+  review_limit: 128
+  # Bio Charcter Limit, after limit is exceeded bot automatically adds '...' at the end.
+  bio_limit: 24
+  # After how much time to delete ticket when closed (in seconds)
+  delete_after: 7
+  # After how much time to delete ticket when no category selected (in seconds)
+  no_select_delete: 600 # 10 minutes
+  # Announce Reviews to Specific Channels
+  send_review: false
+  # Whether to send Message (Custom, not Transcripts) to User after Closing Ticket
+  dm_message: false
+  # Remove Ticket when User Leaves Server
+  remove_leave: false
+  # After how much time to stop to ask for questions in Ticket when no answer (in seconds)
+  # Timeout for Questions
+  question_idle: 300
+  # Whether 'Close Ticket' buttons are enabled
+  close_button: true
+  # Remove Command Message after Sent
+  remove_command: false
+  # Whether to Register Slash Commands
+  slash: true
+  # Rename Ticket Channel to 'closed-user' after closure
+  rename_close: true
+  # Limit of Tickets User can open (requires category.status: false, 
+  # if using categories ignore this line, per-category limits are below)
+  ticket_limit: 1
+  # Ask for Review after Ticket Closure
+  ask_review: false
+  # Role(s) or Permission(s) User(s) is required to have in order to be reviewed
+  # Used to limit who can be reviewed by users
+  # When both are empty, you can review anyone
+  review_req:
+    roles: []
+    permissions: []
+  # Cancel Ticket Questions Process Button
+  cancel_ask: true
+  # Is Suggestion Decision (Accept, Deny, Delete) Option Enabled
+  sugg_decision: true
+
+# ____________________________
+#
+# ADDONS CONFIGURATION
+# ____________________________
+
+addons:
+  # Folder Name of Addon to Disable
+  disabled: ["example"]
+
+# ____________________________
+#
+# CHANNELS CONFIGURATION
+#
+# All of Channels are required
+# ____________________________
+
+channels:
+  # Name of the Ticket Channel, after '-' bot adds user's username
+  channel_name: "🎫・ticket-"
+  # Name of the Ticket Channel after it's closed, after '-' bot adds user's username
+  closed_name: "🔒・closed-"
+  # Name of the Ticket Channel when it has an priority (high/urgent), after '-' bot adds user's username
+  # Available Placeholders: <priority> (Priority Emoji)
+  priority_name: "<priority>・priority-"
+  # ID/Name of Category in which to open tickets
+  category_id: ""
+  # ID/Name of Channel to send Transcripts of Tickets
+  transcripts: ""
+  # ID/Name of Channel to Send New Reviews
+  reviews: ""
+  # ID/Name of Channel to send Auto Announcements
+  announce: ""
+  # ID/Name of Channel in which to send new Suggestions
+  suggestions: ""
+  # ID/Name of Channel in which to send Embed for Suggestion Decision
+  sugg_decision: ""
+  # ID/Name of Channel in which to send Accepted/Denied Suggestions
+  sugg_logs: ""
+
+# ____________________________
+#
+# TICKET CATEGORIES CONFIGURATION
+#
+# Add/Remove Categories for Tickets
+# ____________________________ 
+
+category:
+  # Are Ticket Categories Enabled
+  status: true
+  # Placeholder for Select Menu
+  placeholder: "Click to view Categories"
+  # Are Tickets moved to specific Channel Category after Ticket Category is selected
+  separateCategories: false
+  # Per-Category Roles, one role per category.
+  # Need status: true
+  separateRoles:
+    # Only users with specific role can see ticket, 'role' field in categories
+    enabled: false
+    # Both users with role from 'role' field & roles from 'roles.support' field can see ticket.
+    both: false
+  # Ask Questions on Ticket Creation, if Ticket Categories are disabled
+  questions: false
+  # List of Questions to ask, if Ticket Categories are disabled & questions: true
+  questionsList:
+    # Name for question, used for title
+    - name: "First Question"
+      # Question to ask
+      question: "This is First Question."
+    - name: "Second Question"
+      question: "This is Second Question."
+    - name: "Third Question"
+      question: "This is Third Question."
+categories:
+  # Embed Title
+  - title: "Ticket - General"
+    # Category Name
+    name: "General"
+    # ID For Select Menu
+    id: "general_category"
+    # Select Menu Emoji 
+    emoji: "🎫"
+    # Name/ID of Category to which to move ticket after Ticket Category is selected, for none leave empty
+    # Need separateCategories: true
+    category: ""
+    # Name/ID of Role which will Staff need to view ticket.
+    # Requires separateRoles > enabled: true
+    roles: []
+    # Ask Questions for this Category
+    ask: false
+    # Max Number of Tickets User can open in Category
+    # Per-Category Limit
+    limit: 1
+    # Category Selected Embed
+    embed:
+      # Description of Embed for this Category
+      # Valid Placeholders: <author>, <category>, <reason>
+      description: "**Category:** <category>\n\nHey <user>, this is your ticket, please describe your problem or ask a question.\nStaff will be with you shortly, be patient, thanks!"
+      # Embed Color, can be Name (RED, GREEN etc.) or HEX (#f1f1f1, #dddddd etc.)
+      color: "YELLOW"
+    # Panel for Selected Embed
+    panel:
+      # Title of Panel Embed for this Category
+      title: "General Help"
+      # Description of Panel Embed for this Category
+      description: "Open Ticket in this Category if you need General Help."
+      # Embed Color, can be Name (RED, GREEN etc.) or HEX (#f1f1f1, #dddddd etc.)
+      color: "YELLOW"
+    # List of Questions to ask
+    # Need questions: true & Ticket Categories Enabled
+    # List of Questions to ask
+    # Need questions: true & Ticket Categories Enabled
+    questionsList:
+      # Name for question, used for title
+      - name: "First Question"
+        # Question to ask
+        question: "This is First Question."
+      - name: "Second Question"
+        question: "This is Second Question."
+      - name: "Third Question"
+        question: "This is Third Question."
+  - title: "Ticket - Buycraft"
+    name: "Buycraft"
+    id: "buycraft_category"
+    emoji: "💵"
+    category: ""
+    roles: []
+    ask: false
+    limit: 1
+    embed:
+      description: "**Category:** <category>\n\nHey <user>, this is your ticket, please describe your problem or ask a question.\nStaff will be with you shortly, be patient, thanks!"
+      color: "YELLOW"
+    panel:
+      title: "BuyCraft Help"
+      description: "Open Ticket in this Category if you need help with Buycraft."
+      color: "YELLOW"
+    questionsList:
+      - name: "First Question"
+        question: "This is First Question."
+      - name: "Second Question"
+        question: "This is Second Question."
+      - name: "Third Question"
+        question: "This is Third Question."
+  - title: "Ticket - Bug"
+    name: "Bug"
+    id: "bug_category"
+    emoji: "🐛"
+    category: ""
+    roles: []
+    ask: false
+    limit: 1
+    embed:
+      description: "**Category:** <category>\n\nHey <user>, this is your ticket, please describe your problem or ask a question.\nStaff will be with you shortly, be patient, thanks!"
+      color: "YELLOW"
+    panel:
+      title: "Report a Bug"
+      description: "Open Ticket in this Category if you've found a bug."
+      color: "YELLOW"
+    questionsList:
+      - name: "First Question"
+        question: "This is First Question."
+      - name: "Second Question"
+        question: "This is Second Question."
+      - name: "Third Question"
+        question: "This is Third Question."
+
+# ____________________________
+#
+# AUTO RESPONSES
+# ____________________________
+
+autoResponse:
+  # Are Responses Enabled
+  enabled: false
+  # Embed or Normal Message 
+  # Values: EMBED, TEXT
+  type: "EMBED"
+  # List of Responses
+  list:
+    # Initiator Message - Response Message
+    "Test Message": "Test Response"
+    "Another Message": "Another Response"
+
+# ____________________________
+#
+# AUTO ANNOUNCEMENTS
+# ____________________________
+
+autoAnnounce:
+  # Are Announcements Enabled
+  enabled: false
+  # Embed or Normal Message 
+  # Values: EMBED, TEXT
+  type: "EMBED"
+  # Interval for Announcements (in seconds)
+  interval: 60
+  # List of Responses
+  list:
+    # Message to Announce
+    - "First Message"
+    - "Second Message"
+
+# ____________________________
+#
+# PRODUCTS CONFIGURATION
+# ____________________________
+
+products:
+  # Format for Products List Embed, available placeholders: [ID], [NAME], [DESCRIPTION], [TYPE]
+  format: "**#[ID]** [NAME]\n- [DESCRIPTION]"
+  # After how much time to Delete Download Link (to make it invalid)
+  # Example: 10m, 1h, 1w, 1mo..
+  delete_download: "1h"
+  # How much Users can use one Download Link (make limk invalid after x users downloads from it)
+  limit_download: 1
+
+# ____________________________
+#
+# SELLIX CONFIGURATION
+# ____________________________
+
+sellix:
+  # Sellix API Secret (https://champion-bot.gitbook.io/tickets/other/tebex-and-sellix#sellix)
+  secret: ""
+  # Roles to assign to User upon Verification when sellix.separateProducts: false
+  roles: []
+  # Are Per Product Verify Roles Enabled
+  separateProducts: false
+  # List of Products and Roles to give upon Verification,
+  # Requires sellix.separateProducts: true
+  products:
+    # Title of Sellix Product
+    - name: ""
+      # List of Roles to give upon Verification
+      roles: []
+
+# ____________________________
+#
+# TEBEX CONFIGURATION
+# ____________________________
+
+tebex:
+  # Tebex API Secret (https://champion-bot.gitbook.io/tickets/other/tebex-and-sellix#tebex)
+  secret: ""
+  # Roles to assign to User upon Verification when tebex.separatePackages: false
+  roles: []
+  # Are Per Product Verify Roles Enabled
+  separatePackages: false
+  # List of Products and Roles to give upon Verification,
+  # Requires tebex.separatePackages: true
+  packages:
+    # Title for Package
+    - name: ""
+      # Tebex Package ID
+      id: ""
+      # List of Roles to give upon Verification
+      roles: []
+
+# ____________________________
+#
+# CRAFTINGSTORE CONFIGURATION
+# ____________________________
+
+cstore:
+  # Tebex API Secret (https://champion-bot.gitbook.io/tickets/other/tebex-and-sellix#craftingstore)
+  secret: ""
+  # Roles to assign to User upon Verification when tebex.separatePackages: false
+  roles: []
+  # Are Per Product Verify Roles Enabled
+  separatePackages: false
+  # List of Products and Roles to give upon Verification,
+  # Requires tebex.separatePackages: true
+  packages:
+    # Title for Package
+    - name: ""
+      # Tebex Package ID
+      id: ""
+      # List of Roles to give upon Verification
+      roles: []
+
+# ____________________________
+#
+# TICKET PRIORITY CONFIGURATION
+# ____________________________
+
+priority:
+  # Whether Priority System is Enabled
+  enabled: false
+  # Low Priority Name
+  low: "Low"
+  # Normal Priority Name (Default One)
+  normal: "Normal"
+  # High Priority Name
+  high: "High"
+  # Very High Priority Name
+  urgent: "Urgent"
+
+# ____________________________
+#
+# ROLES CONFIGURATION
+# ____________________________
+
+roles:
+  # List of Support Roles which will have access to Tickets
+  # Not Required if separateRoles > enabled is true.
+  # Example:
+  #
+  # support:
+  #   - "1234"
+  #
+  # If you don't want any, just change to support: []
+  support: []
+  # List of Blacklisted Roles which won't have ability to open Tickets
+  # Example:
+  #
+  # blacklist:
+  #   - "1234"
+  #
+  # If you don't want any, just change to blacklist: []
+  blacklist: []
+  # Roles which can bypass specific stuff
+  # Format is same as for above roles
+  bypass:
+    # Roles which can bypass Command Cooldown
+    cooldown: []
+    # Roles which can bypass Command Permissions
+    permission: []
+
+# ____________________________
+#
+# USERS CONFIGURATION
+# ____________________________
+
+users:
+  # List of Users who are Blacklisted from opening Tickets
+  # Example:
+  #
+  # blacklist:
+  #   - "1234"
+  #
+  # If you don't want any, just change to blacklist: []
+  blacklist: []
+
+# ____________________________
+#
+# CUSTOM STATUS CONFIGURATION
+# ____________________________
+
+status:
+  # Can be PLAYING, LISTENING, WATCHING AND COMPETING
+  type: "WATCHING"
+  # Random Messages in Custom Status, changing every x minutes/hours 
+  change_random: true
+  # Interval to Change Custom Status (in seconds)
+  interval: 180 # 3 minutes, don't go below that
+  # Message which is displayed in Custom Status if change_random = false
+  message: "Champion Tickets v1.5.2"
+  # List of Custom Status's if change_random = true
+  # Valid Placeholders: <members>, <channels>, <currentTickets> (Number of Current Tickets), <totalTickets> (Total Tickets Opened)
+  messages:
+    - "<members> total members"
+    - "<currentTickets> Currently Open Tickets"
+    - "<totalTickets> Total Tickets Opened"
+  
+# ____________________________
+#
+# EMOJIS CONFIGURATION
+# ____________________________
+
+emojis:
+  # Emojis added to new Suggestions
+  yes_emoji: "👍"
+  no_emoji: "👎"
+  remove_vote: "⬜"
+  # Create Ticket Button Emoji
+  create: "🎫"
+  # Close Ticket Button Emoji
+  close: "🔒"
+  # Cancel Ticket Deletation Button Emoji
+  cancel: "🔓"
+  # Next Button Emoji
+  next: "▶"
+  # Previous Button Emoji
+  previous: "◀"
+  # Get File Button Emoji
+  file: "📁"
+  # Get Link Button Emoji
+  link: "🔗"
+  # Ticket Priority Emojis
+  priority:
+    # Low Priority Emoji
+    low: "🔵"
+    # High Priority Emoji
+    high: "🟠"
+    # Very High Priority Emoji
+    urgent: "🔴"
+
+# _____________________________________________________________
+#
+#                     END OF CONFIGURATION
+# _____________________________________________________________

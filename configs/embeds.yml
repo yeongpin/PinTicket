@@ -1,0 +1,425 @@
+# ________________________________________________
+#
+#       CHAMPION TICKETS EMBEDS FILE
+#
+# Here you can customise Bot's Embeds.
+#
+# Embed Colors Accept Color Names
+# (RED, GREEN etc.) and HEX (#f1f1f1, #dddddd etc.)
+#
+# For new Line use \n
+#
+# ________________________________________________
+
+# Title of every Embed
+title: "Champion Tickets"
+# Title of Suggestion Embed
+suggestion_title: "Suggestion"
+# Footer of Every Embed
+footer: "Champion Tickets Bot"
+# Embed Color for Errors or Negative Responses
+error_color: "RED"
+# Embed Color for Success or Positive Responses
+success_color: "GREEN"
+# Embed Color for other situations
+general_color: "YELLOW"
+# Ticket Message in Ticket Channel if not using Categories
+# Valid Placeholders: <user>, <reason>
+ticket_message: "Hey <user>, this is your ticket, please describe your problem or ask a question.\nStaff will be with you shortly, be patient, thanks!"
+# Embed for Selecting Ticket Category
+select_category: "Choose Ticket Category from DropDown Menu, you have 5 minutes to choose category.\n**Categories:**\n🎫 - General Support\n💵 - Buycraft Support\n🐛 - Bug"
+# Panel Message
+panel_message: "If you need help or have a question click button below to open Support Ticket.\nAny Troll Tickets will be punished, have that in mind!"
+# Panel Embed Settings
+panel:
+  # Footer
+  footer:
+    enabled: true
+  # Image above Footer
+  image:
+    enabled: false
+    url: ""
+  # Image in the Top Right Corner
+  thumbnail:
+    enabled: false
+    url: ""
+# Ticket Embed Settings
+ticket:
+  # Footer
+  footer:
+    enabled: false
+  # Image above Footer
+  image:
+    enabled: false
+    url: ""
+  # Image in the Top Right Corner
+  thumbnail:
+    enabled: false
+    url: ""
+# Close Confirmation Embed Settings
+close:
+  # Image above Footer
+  image:
+    enabled: false
+    url: ""
+  # Image in the Top Right Corner
+  thumbnail:
+    enabled: false
+    url: ""
+# Service Commands Embeds
+service:
+  paypal:
+    # Embed Title
+    title: "Paypal"
+    # Button Text
+    button: "Pay Invoice"
+    # Embed Description, to disable leave empty
+    # Valid Placeholders are <user>, <amount>, <service>, <currencySymbol> (USD, EUR etc. - config > currency)
+    # , <currency> & <seller> 
+    description: "To Pay for your Order please follow link below."
+    # Embed Color
+    color: "#4CAAFF"
+    # Is Footer enabled
+    footer: true
+    # Thumbnail
+    thumbnail: true
+    # Valid Placeholders are <user>, <amount>, <service>, <currencySymbol> (USD, EUR etc. - config > currency)
+    # , <currency> & <seller> 
+    # To use just description set to fields: []
+    fields:
+      - title: "Seller"
+        description: "<seller>"
+      - title: "User"
+        description: "<user>"
+      # Title Supports <currency>
+      - title: "Price (<currency>)"
+        description: "<currencySymbol><amount>"
+      - title: "Service"
+        description: "<service>"
+  review:
+    # Embed Title
+    title: "Review"
+    # Embed Description, to disable leave empty
+    # Valid Placeholders are <author>, <user>, <review>, <date> & <comment>
+    description: "You have successfully reviewed Seller."
+    # Embed Color
+    color: "#4CAAFF"
+    # Is Footer enabled
+    footer: true
+    # Thumbnail
+    thumbnail: true
+    # Valid Placeholders are <author>, <user>, <review>, <date> & <comment>
+    # To use just description set to fields: []
+    fields:
+      - title: "Author"
+        description: "<author>"
+      - title: "User"
+        description: "<user>"
+      - title: "Rating"
+        description: "<review>"
+      - title: "Comment"
+        description: "<comment>" 
+  reviewAnnounce:
+    # Embed Title
+    title: "Review Added"
+    # Embed Description, to disable leave empty
+    # Valid Placeholders are <author>, <user>, <review> & <comment>
+    description: ""
+    # Embed Color
+    color: "#4CAAFF"
+    # Is Footer enabled
+    footer: true
+    # Thumbnail
+    thumbnail: true
+    # Valid Placeholders are <author>, <user>, <review> & <comment>
+    # To use just description set to fields: []
+    fields:
+      - title: "Author"
+        description: "<author>"
+      - title: "User"
+        description: "<user>"
+      - title: "Rating"
+        description: "<review>"
+      - title: "Comment"
+        description: "<comment>"
+  profile:
+    # Embed Title
+    title: "Profile"
+    # Embed Color
+    color: "YELLOW"
+    # Embed Description
+    # Valid Placeholders are <reviews>, <totalRating>, <user>, <numRating>, <bio>, <status>,
+    # <paypal>, <hours>, <claimed>, <responseTime>
+    description: "Profile of User <user>"
+    # Is Footer enabled
+    footer: true
+    # Thumbnail 
+    thumbnail: true
+    # Valid Placeholders are <reviews>, <totalRating>, <user>, <numRating>, <bio>, <status>,
+    # <paypal>, <hours>, <claimed>, <responseTime>
+    # To use just description set to fields: []
+    fields:
+      - title: "User"
+        description: "<user>"
+      - title: "Total Rating"
+        description: "<totalRating> `(<numRating>)`"
+      - title: "Freelancer Status"
+        description: "<status>"
+      - title: "Freelancer's PayPal"
+        description: "<paypal>"
+      - title: "Available Hours"
+        description: "<hours>"
+      - title: "Latest Reviews"
+        description: "<reviews>"
+      - title: "Biography"
+        description: "```<bio>```"
+  reviewInfo:
+    # Embed Title 
+    title: "Review Information"
+    # Embed Color
+    color: "#4CAAFF"
+    # Embed Description
+    # Valid Placeholders are <id>, <author>, <user>, <comment>, <rating> & <date>
+    description: ">>> **ID:** <id>\n**User:** <user>\n**Author:** <author>\n**Rating:** <rating>\n**Comment:** <comment>"
+    # Is Footer enabled
+    footer: true
+  crypto:
+    # Embed Title
+    title: "Crypto"
+    # Embed Description, to disable leave empty
+    # Valid Placeholders are <user>, <amount>, <service>, <address> & <seller> 
+    description: "To Pay for your Order please scan QR Code."
+    # Embed Color
+    color: "#4CAAFF"
+    # Is Footer enabled
+    footer: true
+    # Thumbnail
+    thumbnail: true
+    # Valid Placeholders are <user>, <amount>, <cryptoAmount>, <service>, <address>
+    # <currencySymbol> (USD, EUR etc. - config > currency), <currency>, <symbol> (Crypto - BTC, ETH..) & <seller>
+    # To use just description set to fields: []
+    fields:
+      - title: "Seller"
+        description: "<seller>"
+      - title: "User"
+        description: "<user>"
+      # Title Supports <currency>
+      - title: "Price (<currency>)"
+        description: "<currencySymbol><amount>"
+      # Title Supports <symbol>
+      - title: "Price (<symbol>)"
+        description: "<cryptoAmount>"
+      - title: "Service"
+        description: "<service>"
+# DM Transcript Embed
+dmTranscript:
+  # Embed Title
+  title: "Ticket Closed"
+  # Embed Color
+  color: "YELLOW"
+  # Embed Description
+  # Valid Placeholders are <closedBy>, <channelId>, <channelName>, <openedAt>, <closedAt>, <author>, <ticketId>
+  description: "Ticket with ID #<ticketId> have been closed."
+  # Is Footer enabled
+  footer: true
+  # Thumbnail 
+  thumbnail: true
+  # Valid Placeholders are <closedBy>, <channelId>, <channelName>, <openedAt>, <closedAt>, <author>, <ticketId>
+  # To use just description set to fields: []
+  fields:
+    - title: "Ticket Author"
+      description: "<author>"
+    - title: "Closed By"
+      description: "<closedBy>"
+    - title: "Channel ID"
+      description: "<channelId>"
+    - title: "Ticket ID"
+      description: "<ticketId>"
+    - title: "Opened At"
+      description: "<openedAt>" 
+    - title: "Closed At"
+      description: "<closedAt>"
+# Transcript Log Embed
+transcriptLog:
+  # Embed Title
+  title: "Ticket Closed"
+  # Embed Color
+  color: "YELLOW"
+  # Embed Description
+  # Valid Placeholders are <closedBy>, <channelId>, <channelName>, <openedAt>, <closedAt>, <author>, <ticketId>
+  description: "Ticket with ID #<ticketId> have been closed."
+  # Is Footer enabled
+  footer: true
+  # Thumbnail 
+  thumbnail: true
+  # Valid Placeholders are <closedBy>, <channelId>, <channelName>, <openedAt>, <closedAt>, <author>, <ticketId>
+  # To use just description set to fields: []
+  fields:
+    - title: "Ticket Author"
+      description: "<author>"
+    - title: "Closed By"
+      description: "<closedBy>"
+    - title: "Channel ID"
+      description: "<channelId>"
+    - title: "Ticket ID"
+      description: "<ticketId>"
+    - title: "Opened At"
+      description: "<openedAt>" 
+    - title: "Closed At"
+      description: "<closedAt>" 
+# Suggestions Embed
+suggestion:
+  # Embed Title
+  title: "New Suggestion"
+  # Embed Color
+  color: "YELLOW"
+  # Embed Description
+  # Valid Placeholders are <author>, <suggestions>, <date>, <yes_vote>, <no_vote>
+  description: "New Suggestion have been submitted."
+  # Is Footer enabled
+  footer: true
+  # Thumbnail 
+  thumbnail: true
+  # Valid Placeholders are <author>, <suggestions>, <date>, <yes_vote>, <no_vote>
+  # To use just description set to fields: []
+  fields:
+    - title: "Author"
+      description: "<author>"
+    - title: "Suggestion"
+      description: "<suggestion>"
+    - title: "Upvotes"
+      description: "<yes_vote>"
+    - title: "Downvotes"
+      description: "<no_vote>"
+# Calculate Embed
+calculate:
+  # Embed Title
+  title: "Calculator"
+  # Embed Color
+  color: "YELLOW"
+  # Embed Description
+  # Valid Placeholders are <expression>, <result>
+  description: "Your Math Problem have been calculated."
+  # Is Footer enabled
+  footer: true
+  # Thumbnail 
+  thumbnail: false
+  # Valid Placeholders are <expression>, <result>
+  # To use just description set to fields: []
+  fields:
+    - title: "Expression"
+      description: "<expression>"
+    - title: "Result"
+      description: "```js\n<result>\n```"
+# ChannelInfo Command
+channelInfo:
+  # Embed Title
+  title: "Channel Informations"
+  # Embed Color
+  color: "YELLOW"
+  # Is Footer enabled
+  footer: true
+  # Fields Names
+  fields:
+    claimed: "Claimed" # Leave Empty to disable
+    notes: "Notes"
+    ticketId: "Ticket ID"
+  # Show Questions & Answers Fields
+  questions: true
+help:
+  # Embed Title
+  title: "🚀 · Help Menu"
+  # Embed Description, to disable leave empty
+  # Valid Placeholders are <member>, <service>, <utility>, <tickets> & <prefix>
+  description: ""
+  # Embed Color
+  color: "#4CAAFF"
+  # Is Footer enabled
+  footer: true
+  # Thumbnail
+  thumbnail: true
+  # Valid Placeholders are <member>, <service>, <utility>, <tickets> & <prefix>
+  # To use just description set to fields: []
+  fields:
+    - title: "👤 ･ Member"
+      description: "<member>"
+    - title: "💵 ･ Service"
+      description: "<service>"
+    - title: "🔨 ･ Utility"
+      description: "<utility>"
+    - title: "🎫 ･ Tickets"
+      description: "<tickets>" 
+# Command Info Embed
+commandInfo:
+  # Embed Title
+  title: "🚀 · Informations About Command"
+  # Embed Description, to disable leave empty
+  # Valid Placeholders are <name>, <description>, <usage>, <category> & <prefix>
+  description: ""
+  # Embed Color
+  color: "#4CAAFF"
+  # Is Footer enabled
+  footer: true
+  # Thumbnail
+  thumbnail: true
+  # Valid Placeholders are <name>, <description>, <usage>, <category> & <prefix>
+  # To use just description set to fields: []
+  fields:
+    - title: "Command Name"
+      description: "`<name>`"
+    - title: "Description"
+      description: "`<description>`"
+    - title: "Usage"
+      description: "`<prefix><usage>`"
+    - title: "Category"
+      description: "`<category>`" 
+# Sellix License Info Embed
+licenseInfo:
+  # Embed Title
+  title: "License Informations"
+  # Embed Description, to disable leave empty
+  # Valid Placeholders are <name>, <mail>, <product>, <licence>, <price>
+  # , <discord_name> (Discord Verified User) & <gateway>
+  description: ""
+  # Embed Color
+  color: "#4CAAFF"
+  # Is Footer enabled
+  footer: true
+  # Thumbnail
+  thumbnail: true
+  # Valid Placeholders are <name>, <mail>, <product>, <licence>, <price>
+  # , <discord_name> (Discord Verified User) & <gateway>
+  # To use just description set to fields: []
+  fields:
+    - title: "License Key"
+      description: "||`<license>`||"
+    - title: "Product Title"
+      description: "`<product>`"
+    - title: "Purchaser Name"
+      description: "`<name>`"
+    - title: "Purchaser Email"
+      description: "`<mail>`"
+# Sellix Product Info Embed
+sellixProduct:
+  # Embed Title
+  title: "Sellix Product"
+  # Embed Description, to disable leave empty
+  # Valid Placeholders are <name>, <description>, <price>, <stock> & <tos>
+  description: ""
+  # Embed Color
+  color: "#4CAAFF"
+  # Is Footer enabled
+  footer: true
+  # Thumbnail
+  thumbnail: true
+  # Valid Placeholders are <name>, <description>, <price>, <stock> & <tos>
+  # To use just description set to fields: []
+  fields:
+    - title: "Name"
+      description: "<name>"
+    - title: "Description"
+      description: "`<description>`"
+    - title: "Price"
+      description: "$<price>"
+    - title: "Stock"
+      description: "**<stock>**" 

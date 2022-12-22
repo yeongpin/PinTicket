@@ -1,0 +1,25 @@
+# ________________________________________________
+#
+#         PRODUCTS LIST CONFIGURATION FILE
+#
+# Here you can add products which users will be able to download
+# or to get link to something.
+#
+# ________________________________________________
+
+# List of Products
+products:
+    # Name for Product
+  - name: "File Name"
+    # Product Description
+    description: "File Description"
+    # Type of Product, can be FILE, LINK or NONE (If you just want to list all Products
+    # without users to download them)
+    type: "FILE"
+    # Name of File from products Folder (with extension) or Link if type is LINK
+    # Examples: Test.txt, https://mc-market.org
+    product: ""
+    # Role(s) required to download
+    roles: []
+    # Permission(s) required to download
+    permissions: []
